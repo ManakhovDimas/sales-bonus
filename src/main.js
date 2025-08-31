@@ -145,7 +145,7 @@ function analyzeSalesData(data, options) {
     seller.bonus = calculateBonus(index, total, seller);
     seller.top_products = Object.entries(seller.products_sold || {})
       .map(([sku, quantity]) => ({ sku, quantity }))
-      .sort((a, b) => b - a)
+      .sort((a, b) => b.quantity - a.quantity)
       .slice(0, 10);
   });
 
